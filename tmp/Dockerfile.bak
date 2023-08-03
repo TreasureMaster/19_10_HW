@@ -1,0 +1,45 @@
+FROM ubuntu:20.04
+
+ARG DEBIAN_FRONTEND=noninteractive
+ENV TZ=Europe/Moscow
+# ARG ENV_TYPE
+# ENV ENV_TYPE ${ENV_TYPE}
+
+# COPY ./src/shortlinks/requirements /tmp/requirements
+
+# systemctl enable --now atd &&\
+
+RUN apt-get update -y 
+RUN apt-get install -y nginx
+RUN apt-get install -y mysql-server
+RUN apt-get install -y mysql-client
+# EXPOSE 3307
+# RUN service mysql start
+
+# RUN apt update -y &&\
+# 	apt install -y apt-utils &&\
+# 	apt install -y jq &&\
+# 	mkdir /var/shortlinks
+
+# RUN	pip install --upgrade pip setuptools &&\
+# 	pip install -r /tmp/requirements/${ENV_TYPE}.txt &&\
+# 	mkdir /app && mkdir /var/shortlinks
+
+# WORKDIR /app
+# COPY ./src /app
+# COPY ./src/shortlinks/config/nginx/entrypoint.sh /usr/bin/entrypoint.sh
+# ENTRYPOINT [ "/usr/bin/entrypoint.sh" ]
+# CMD ["echo", "!!!!!!!! Container_A is available now !!!!!!!!"]
+# ENTRYPOINT ["nginx", "-g", "daemon off;"]
+# CMD ["mysql", "start", "nginx", "-g", "daemon off;"]
+# CMD ["/bin/bash", "-c", "echo FIRST COMMAND;echo SECOND COMMAND"]
+# CMD ["/usr/bin/supervisord"]
+
+COPY ./startup.sh /app
+WORKDIR /app
+CMD ["/bin/bash", "-c", "./startup.sh"]
+
+# [Security] Limit the scope of user who run the docker image
+# RUN adduser -D user
+
+# USER user
