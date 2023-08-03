@@ -1,6 +1,6 @@
-<h1>ДЗ модуль 19</h1>
-<h3>Группа: admin 1024</h3>
-<h3>Студент id: v53c404</h3>
+<h1>Домашнее задание: Модуль 19</h1>
+<h3>Группа: ADMIN 1009</h3>
+<h3>Студент: Михаил Шевцов</h3>
 <a href="/insert.php">Вставить данные</a><BR>
 <a href="/info.php">PHP info</a><BR>
 <form action="select.php" method="get">
