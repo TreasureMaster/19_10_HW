@@ -16,3 +16,12 @@
 10. Затянуть образ (если надо, то можно войти - `docker login`): `docker pull myperfectdockerid/mytestrep:nginx3.test`
 11. Проверка, что затянули образ: `docker images`
 12. Запуск: `docker run -d -p 80:80 -v ${PWD}/data:/data:rw myperfectdockerid/mytestrep:nginx3.test`
+
+### Пример от Dockerhub
+
+Вы можете отправить новый образ в этот репозиторий с помощью интерфейса командной строки.
+
+1. `docker tag local-image:tagname new-repo:tagname`
+2. `docker push new-repo:tagname`
+
+Обязательно измените имя тега на желаемый тег репозитория образа.
