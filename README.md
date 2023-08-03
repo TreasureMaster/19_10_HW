@@ -25,3 +25,6 @@
 2. `docker push new-repo:tagname`
 
 Обязательно измените имя тега на желаемый тег репозитория образа.
+
+Чтобы отправить новый тег в этот репозиторий:
+`docker push michaelshewzov/homework19:tagname`
