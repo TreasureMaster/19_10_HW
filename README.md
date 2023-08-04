@@ -28,3 +28,10 @@
 
 Чтобы отправить новый тег в этот репозиторий:
 `docker push michaelshewzov/homework19:tagname`
+
+Вкратце:
+1. `docker build -t michaelshewzov/homework19 .`
+2. `docker run -d -p 80:80 michaelshewzov/homework19 .`
+3. `docker login --username=michaelshewzov`
+4. `docker push michaelshewzov/homework19:latest`
+5. `docker pull michaelshewzov/homework19:latest`
